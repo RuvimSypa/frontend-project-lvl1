@@ -1,0 +1,23 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "![Actions Status](/workflows/hexlet-check/badge.svg)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuvimSypa/frontend-project-lvl1.git"
+  },
+  "author": "Sypa Ruvim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuvimSypa/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/RuvimSypa/frontend-project-lvl1#readme"
+}
