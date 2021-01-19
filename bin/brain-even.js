@@ -8,11 +8,17 @@ const askQuestion = (randomNumber) => {
   return String(readlineSync.question('Your answer: '));
 };
 const checkAnswer = (answer, randomNumber) => (answer === 'yes' && randomNumber % 2 === 0) || (answer === 'no' && randomNumber % 2 === 1);
+
 const startGame = () => {
   console.log('Welcome to the Brain Games!');
   const name = String(readlineSync.question('May I have your name?: '));
   console.log(`Hello, ${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  return name;
+};
+
+const initGame = () => {
+  const name = startGame();
   let randomNumber = getRandomArbitrary(1, 20);
   let answer = askQuestion(randomNumber);
   let count = 1;
@@ -34,4 +40,5 @@ const startGame = () => {
     console.log(`Congratulations, ${name}!`);
   }
 };
-startGame();
+
+initGame();
