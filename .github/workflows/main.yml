@@ -1,18 +1,35 @@
-name: Test
+# Name of workflow
+name: Brain-Games
 
+# Trigger the workflow on push or pull request
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push
 
 jobs:
   build:
-    # The type of runner that the job will run on
+
+    # The type of machine to run the job on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      # Node versions list
+      matrix:
+        node-version: [13.x]
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Check-out repository under GitHub workspace
+        # https://github.com/actions/checkout
       - uses: actions/checkout@v2
-      - run: make lint
+        # Step's name
+      - name: Use Node.js ${{ matrix.node-version }}
+        # Configures the node version used on GitHub-hosted runners
+        # https://github.com/actions/setup-node
+        uses: actions/setup-node@v1
+        # The Node.js version to configure
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run linter
+        # Run Linter
+        run:
+          make lint
