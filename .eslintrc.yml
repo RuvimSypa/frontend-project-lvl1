@@ -1,13 +1,12 @@
----
+# .eslintrc.yml
 env:
   browser: true
-  node: true
-  es6: true
+  es2020: true
+extends:
+  - airbnb-base
 parserOptions:
   sourceType: module
   ecmaVersion: 11
-extends:
-  - airbnb-base
 rules:
   no-console: off
   import/extensions: off
