@@ -6,6 +6,8 @@ env:
 parserOptions:
   sourceType: module
   ecmaVersion: 11
+extends:
+  - 'airbnb-base'
 rules:
   no-console: off
   import/extensions: off
